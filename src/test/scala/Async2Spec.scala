@@ -1,9 +1,9 @@
 import scala.concurrent.Future
 import scala.concurrent.duration._
-import org.specs2.concurrent.ExecutionEnv
 import org.specs2.mutable.Specification
+import org.specs2.specification.core.{Env, OwnExecutionEnv}
 
-class Async2Spec(implicit ee: ExecutionEnv) extends Specification {
+class Async2Spec(val env: Env) extends Specification with OwnExecutionEnv {
 
   "Future matchers" should {
     "work" in {
