@@ -11,6 +11,12 @@ class Async2Spec(implicit ee: ExecutionEnv) extends Specification {
 
       result must beEqualTo("1").awaitFor(10.seconds)
     }
+
+    "work with 2 examples" in {
+      val result = Future.successful("2")
+
+      result must beEqualTo("2").awaitFor(10.seconds)
+    }
   }
 }
 
